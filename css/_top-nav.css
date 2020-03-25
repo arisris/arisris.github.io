@@ -1,0 +1,126 @@
+.top-nav,
+.top-nav>.container {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  background-color: white;
+}
+
+.top-nav .top-nav-item {
+  display: block;
+  color: black;
+  line-height: 1.5;
+  padding: 10px 12px;
+}
+.top-nav a.top-nav-item,
+.top-nav .link {
+  cursor: pointer;
+  color: green;
+}
+.top-nav a.top-nav-item:hover,
+.top-nav .link:hover {
+  background-color: rgba(0,0,0, 0.05);
+}
+
+.top-nav .top-nav-left,
+.top-nav .top-nav-right {
+  display: flex;
+  flex: 1;
+}
+
+.top-nav .top-nav-left {
+  justify-content: flex-start;
+}
+
+.top-nav .top-nav-right {
+  justify-content: flex-end;
+}
+
+/* Nav Menu */
+.top-nav .top-nav-menu {
+  display: flex;
+}
+@media screen and (max-width: 480px) {
+  .top-nav .top-nav-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    width: 240px;
+    color: black;
+    background-color: whitesmoke;
+    z-index: 1000;
+  }
+  .top-nav .top-nav-menu.is-active {
+    display: block;
+  }
+  .top-nav .top-nav-menu a {
+    color: green;
+  }
+  .top-nav .top-nav-overlay {
+    display: block;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 999;
+  }
+}
+
+/* Hamburger */
+.top-nav .top-nav-burger {
+  cursor: pointer;
+  position: relative;
+  display: none;
+  height: 38px;
+  width: 38px;
+}
+
+.top-nav .top-nav-burger>span {
+  background-color: currentColor;
+  display: block;
+  height: 1px;
+  width: 16px;
+  left: calc(50% - 8px);
+  position: absolute;
+  transform-origin: center;
+  transition-duration: .2s;
+  transition-property: background-color, opacity, transform;
+  transition-timing-function: ease-out;
+}
+
+.top-nav .top-nav-burger>span:nth-child(1) {
+  top: calc(50% - 6px);
+}
+
+.top-nav .top-nav-burger>span:nth-child(2) {
+  top: calc(50% - 1px);
+}
+
+.top-nav .top-nav-burger>span:nth-child(3) {
+  top: calc(50% + 4px);
+}
+
+.top-nav .top-nav-burger.is-active>span:nth-child(1) {
+  transform: translateY(5px) rotate(45deg);
+}
+
+.top-nav .top-nav-burger.is-active>span:nth-child(2) {
+  opacity: 0;
+}
+
+.top-nav .top-nav-burger.is-active>span:nth-child(3) {
+  transform: translateY(-5px) rotate(-45deg);
+}
+.top-nav .top-nav-burger:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+@media screen and (max-width: 480px) {
+  .top-nav .top-nav-burger {
+    display: block;
+  }
+}

@@ -1,5 +1,4 @@
 import routes from "./routes.js";
-import "./styles.js";
 
 const pages = {};
 

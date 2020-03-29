@@ -5,9 +5,7 @@ const heroClass = b`
   flex-direction column
   align-items center
   justify-content center
-  min-height calc(100vh - 130px)
   text-align center
-  padding 20px
 `.$nest("figure img", b`
   border-radius 100%
 `).$nest("*", b.p("10px 0 10px 0"))

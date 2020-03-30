@@ -1,7 +1,4 @@
 export default class {
-  constructor() {
-    this.sideActive = false;
-  }
   oncreate({ dom }) {
     this.dom = dom;
   }
@@ -10,7 +7,6 @@ export default class {
     const burger = this.dom.querySelector(".top-nav-burger");
     const menu = this.dom.querySelector(".top-nav-menu");
     const overlay = document.createElement("div");
-    overlay.id = "#menu-overlay";
     overlay.classList.add("top-nav-overlay");
     overlay.addEventListener("click", () => {
       self.toggleNav();

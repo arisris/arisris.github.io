@@ -1,3 +1,13 @@
-@import url("./_chota.css");
-@import url("./_vars.css");
+/*! Just My Style | https://arisris.github.io | this css based on https://github.com/jenil/chota */
+
+@import url("./_base.css");
+@import url("./_grid.css");
+@import url("./_form.css");
+
+@import url("./_card.css");
+@import url("./_tab.css");
+@import url("./_tag.css");
+@import url("./_dropdown.css");
+
+@import url("./_util.css");
 @import url("./_top-nav.css");

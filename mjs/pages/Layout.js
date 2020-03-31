@@ -1,6 +1,17 @@
 export default class {
   oncreate({ dom }) {
     this.dom = dom;
+    this.prevNavPos = window.pageYOffset;
+    const self = this;
+    window.onscroll = () => {
+      const currentPos = window.pageYOffset;
+      if (self.prevNavPos > currentPos) {
+        self.dom.style.top = 0
+      } else {
+        self.dom.style.top = "-60px";
+      }
+      self.prevNavPos = currentPos;
+    }
   }
   toggleNav() {
     const self = this;
@@ -19,7 +30,7 @@ export default class {
       easing: "ease-in-out",
       duration: 300
     });
-    if (menu.classList.contains("is-active")) {
+    if (burger.classList.contains("is-active")) {
       anim.reverse();
       anim.onfinish = () => {
         menu.classList.remove("is-active");
@@ -36,7 +47,9 @@ export default class {
     let { sideActive } = vnode.state;
     const self = this;
     return [
-      m("nav.top-nav.is-fixed", {}, m(".container", [
+      m("nav.top-nav.is-fixed", {
+        
+      }, m(".container", [
         m(".top-nav-left", [
           m(".top-nav-burger", {
             onclick(){
@@ -49,8 +62,8 @@ export default class {
           })),
         ]),
         m(".top-nav-right", [
-          m("a.top-nav-item[target=_blank][href=https://fb.me/arisfungratis]", {}, "Facebook"),
-          m("a.top-nav-item[target=_blank][href=https://github.com/arisris]", {}, "Github")
+          m("a.top-nav-item[target=_blank][href=https://fb.me/arisfungratis]", {}, m("img[src=./img/facebook-original.svg]")),
+          m("a.top-nav-item[target=_blank][href=https://github.com/arisris]", {}, m("img[src=./img/github-original.svg]"))
         ])
       ])),
       m("main.container.main-content", {}, vnode.children),

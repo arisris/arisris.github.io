@@ -7,10 +7,12 @@
 }
 .top-nav,
 .top-nav>.container {
+  top: 0;
   display: flex;
   align-items: center;
   height: 60px;
   background-color: lightgrey;
+  transition: top .3s ease;
 }
 .top-nav .top-nav-logo {
   display: flex;
@@ -76,7 +78,7 @@
   .top-nav .top-nav-overlay {
     display: block;
     position: fixed;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.3);
     top: 0;
     left: 0;
     bottom: 0;
@@ -87,38 +89,39 @@
 
 /* Hamburger */
 .top-nav .top-nav-burger {
-  cursor: pointer;
-  position: relative;
   display: none;
+}
+
+@media screen and (max-width: 480px) {
+  .top-nav .top-nav-burger {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    line-height: 1.5;
+    padding: 10px 10px;
+  }
+}
+
+.top-nav .top-nav-burger:hover {
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 .top-nav .top-nav-burger>span {
   background-color: green;
   display: block;
+  margin: 2px 2px;
   height: 1px;
   width: 16px;
-  left: calc(50% - 8px);
-  position: absolute;
   transform-origin: center;
   transition-duration: .2s;
   transition-property: background-color, opacity, transform;
   transition-timing-function: ease-out;
 }
 
-.top-nav .top-nav-burger>span:nth-child(1) {
-  top: calc(50% - 6px);
-}
-
-.top-nav .top-nav-burger>span:nth-child(2) {
-  top: calc(50% - 1px);
-}
-
-.top-nav .top-nav-burger>span:nth-child(3) {
-  top: calc(50% + 4px);
-}
-
 .top-nav .top-nav-burger.is-active>span:nth-child(1) {
-  transform: translateY(5px) rotate(45deg);
+  transform: translateY(4.5px) rotate(45deg);
 }
 
 .top-nav .top-nav-burger.is-active>span:nth-child(2) {
@@ -127,15 +130,4 @@
 
 .top-nav .top-nav-burger.is-active>span:nth-child(3) {
   transform: translateY(-5px) rotate(-45deg);
-}
-.top-nav .top-nav-burger:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-}
-@media screen and (max-width: 480px) {
-  .top-nav .top-nav-burger {
-    display: flex;
-    align-items: center;
-    width: 48px;
-    height: 48px;
-  }
 }

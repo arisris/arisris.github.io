@@ -22,7 +22,12 @@ export default class {
     overlay.addEventListener("click", () => {
       self.toggleNav();
     }, { once: true });
-    const anim = menu.animate([{
+    overlay.animate([{
+      opacity: 0
+    }, {
+      opacity: 1
+    }], { duration: 300 });
+    const menuAnim = menu.animate([{
       transform: "translate3d(-100%, 0, 0)"
     }, {
       transform: "translate3d(0, 0, 0)"
@@ -31,8 +36,8 @@ export default class {
       duration: 300
     });
     if (burger.classList.contains("is-active")) {
-      anim.reverse();
-      anim.onfinish = () => {
+      menuAnim.reverse();
+      menuAnim.onfinish = () => {
         menu.classList.remove("is-active");
         menu.nextElementSibling.remove();
         burger.classList.remove("is-active");
@@ -47,9 +52,7 @@ export default class {
     let { sideActive } = vnode.state;
     const self = this;
     return [
-      m("nav.top-nav.is-fixed", {
-        
-      }, m(".container", [
+      m("nav.top-nav.is-fixed", {}, m(".container", [
         m(".top-nav-left", [
           m(".top-nav-burger", {
             onclick(){

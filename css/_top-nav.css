@@ -121,10 +121,10 @@
 }
 
 .top-nav .top-nav-burger>span:nth-child(1) {
-  width: 20px;
+  width: 24px;
 }
 .top-nav .top-nav-burger>span:nth-child(3) {
-  width: 16px;
+  width: 14px;
 }
 
 .top-nav .top-nav-burger.is-active {

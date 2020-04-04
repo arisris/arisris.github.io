@@ -1,4 +1,7 @@
 export default class {
+  constructor() {
+    this.navActive = false;
+  }
   oncreate({ dom }) {
     this.dom = dom;
     this.prevNavPos = window.pageYOffset;
@@ -38,11 +41,13 @@ export default class {
     if (burger.classList.contains("is-active")) {
       menuAnim.reverse();
       menuAnim.onfinish = () => {
+        self.navActive = false;
         menu.classList.remove("is-active");
         menu.nextElementSibling.remove();
         burger.classList.remove("is-active");
       }
     } else {
+      self.navActive = true;
       menu.classList.add("is-active");
       menu.parentNode.insertBefore(overlay, menu.nextSibling);
       burger.classList.add("is-active");

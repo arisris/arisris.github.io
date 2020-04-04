@@ -1,0 +1,9 @@
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(0, 0, 0);
+  }
+  50% {
+    opacity: 1;
+  }
+}

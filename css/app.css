@@ -1,6 +1,7 @@
 /*! Just My Style | https://arisris.github.io | this css based on https://github.com/jenil/chota */
 
 @import url("./_base.css");
+@import url("./_keyframes.css");
 @import url("./_grid.css");
 @import url("./_form.css");
 

@@ -14,6 +14,7 @@
   color: white;
   background-color: purple;
   transition: top .3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 .top-nav .top-nav-logo {
   display: flex;
@@ -131,7 +132,7 @@
   width: 14px;
 }
 
-.top-nav .top-nav-burger.is-active {
+/*.top-nav .top-nav-burger.is-active {
   position: fixed;
   border-radius: 0 0 10px 0;
   top: 0;
@@ -141,6 +142,7 @@
   z-index: 1000;
   animation: zoomIn .3s ease-in;
 }
+*/
 .top-nav .top-nav-burger.is-active>span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
   width: 24px;

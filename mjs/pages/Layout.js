@@ -65,9 +65,12 @@ export default class {
             }
           }, [0, 1, 2].map(() => m("span"))),
           m(".top-nav-logo.link", "KlikApp"),
-          m(".top-nav-menu", [0, 1, 2, 3, 4].map(i => {
-            return m("a[href=#].top-nav-item", "Menu "+i)
-          })),
+          m(".top-nav-menu", [
+            m(m.route.Link, {
+              href: "/about-me",
+              className: "top-nav-item"
+            }, "About Me")
+          ]),
         ]),
         m(".top-nav-right", [
           m("a.top-nav-item[target=_blank][href=https://fb.me/arisfungratis]", {}, m("img[src=./img/facebook-original.svg]")),

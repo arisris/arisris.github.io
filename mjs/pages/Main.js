@@ -20,9 +20,9 @@ export default class {
           m("strong"+b.c("green"), "Riswanto")
         ]),
         m("p", "Fullstack Web Developer. Since 2010"),
-        Array(50).fill("Test Test ").map((o, i) => {
+        /*Array(50).fill("Test Test ").map((o, i) => {
           return m("p", o + i)
-        })
+        })*/
       ])
     ]);
   }

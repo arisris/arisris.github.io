@@ -21,6 +21,8 @@
   align-items: center;
   line-height: 1.5;
   padding: 10px;
+  font-size: 25px;
+  font-weight: bold;
 }
 
 .top-nav .top-nav-item {

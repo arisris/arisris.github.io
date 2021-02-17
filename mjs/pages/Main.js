@@ -14,11 +14,12 @@ export default class {
   view() {
     return m(Layout, {}, [
       m(""+heroClass, [
-        m("h1"+b.fs(40).fw("bold"), [
-          m("strong"+b.c("grey"), "Aris"),
+        m("h1"+b.fs(40).fw("bold").mb(0), [
+          m("strong"+b.c("red"), "Aris"),
           " ",
           m("strong"+b.c("green"), "Riswanto")
         ]),
+        m("figure", m("img[src=./img/aris.jpeg][alt=Aris Riswanto]")),
         m("p", "Fullstack Web Developer. Since 2010"),
         /*Array(50).fill("Test Test ").map((o, i) => {
           return m("p", o + i)

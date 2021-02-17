@@ -63,8 +63,8 @@ export default class {
             onclick(){
               self.toggleNav();
             }
-          }, [0, 1, 2].map(() => m("span"))),
-          m(".top-nav-logo.link", "KlikApp"),
+          }, [0, 1, 2].map(() => m("span[aria-hiden=true]"))),
+          m(".top-nav-logo.link", "HOME"),
           m(".top-nav-menu", [
             m(m.route.Link, {
               href: "/about-me",
@@ -78,9 +78,9 @@ export default class {
         ])
       ])),
       m("main.container.main-content", {}, vnode.children),
-      m("footer.container.footer", {}, [
+      /*m("footer.container.footer", {}, [
         m.trust("&copy; Kliksob"),
-      ])
+      ])*/
     ]
   }
 }

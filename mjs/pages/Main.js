@@ -8,7 +8,7 @@ const heroClass = b`
   text-align center
 `.$nest("figure img", b`
   border-radius 100%
-`).$nest("*", b.p("10px 0 10px 0"))
+`).$nest("*", b.p("10px 0 10px 0")).$nest("p", b.fs(20))
 
 export default class {
   view() {
@@ -19,11 +19,10 @@ export default class {
           " ",
           m("strong"+b.c("green"), "Riswanto")
         ]),
+        m("i"+b.c("grey"), "Hi wellcome to my personal site"),
         m("figure", m("img[src=./img/aris.jpeg][alt=Aris Riswanto]")),
         m("p", "Fullstack Web Developer. Since 2010"),
-        /*Array(50).fill("Test Test ").map((o, i) => {
-          return m("p", o + i)
-        })*/
+        m("p", "This site is being development stage")
       ])
     ]);
   }

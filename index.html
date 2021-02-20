@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
-    <title>Hi.. I'am Aris Riswanto</title>
-    <link rel="stylesheet" href="./css/app.css" />
+  <title>Hi.. I'am Aris Riswanto</title>
+  <meta name="description" content="Hi Selamat datang di situs pribadiku. Silahkan jelajahi sesuka hatimu" />
+  <meta name="keywords" content="Portpolio Aris Riswanto, Kliksob.com, PWA, Mithril.js, Marked, BSS, Singgle page apps, Landing Page" />
+  <link rel="stylesheet" href="./css/app.css" />
 </head>
 <body>
   <div class="container">
@@ -12,10 +14,18 @@
   </div>
   <noscript>This website required javascript.</noscript>
   <script async src="./libs/vconsole.min.js"></script>
-  <script async>window.vConsole = new VConsole();</script>
   <script async src="./libs/bss.min.js"></script>
   <script async src="./libs/mithril.min.js"></script>
   <script async src="./libs/marked.min.js"></script>
+  <script async>
+    // Remove vConsole on live site
+    if (window.location.host !== "arisris.github.io") {
+      window.vConsole = new VConsole();
+    }
+    window.__conf = {
+      baseUrl: location.protocol + "//" + location.host + "/"
+    }
+  </script>
   <script async type="module" src="./mjs/main.js"></script>
 </body>
 </html>
